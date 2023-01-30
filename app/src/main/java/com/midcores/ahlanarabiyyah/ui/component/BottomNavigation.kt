@@ -49,7 +49,10 @@ fun BottomNavigation(
                 end = spacing.medium)
     ){
         items.forEach { item ->
-            BottomNavigationItems(item = item, isSelected = item.route == currentScreenRoute) {
+            BottomNavigationItems(
+                item = item, isSelected =
+                item.route == currentScreenRoute
+            ) {
                 onItemSelected(item)
             }
         }
@@ -64,15 +67,19 @@ fun BottomNavigationItems(
     inactiveIconColor: Color = InactiveGentianBlue,
     onClick:() -> Unit
 ) {
-    val contentIconColor = if (isSelected) activeIconColor else inactiveIconColor
     val density = LocalDensity.current
+    val contentIconColor = if (isSelected)
+        activeIconColor
+    else inactiveIconColor
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.clickable(
             indication = null,
-            interactionSource = remember { MutableInteractionSource() }
+            interactionSource = remember {
+                MutableInteractionSource()
+            }
         ) {
             onClick()
         }
@@ -105,7 +112,7 @@ fun BottomNavigationItems(
             ) {
                 Text(
                     text = item.title,
-                    style = typography.caption
+                    style = typography.subtitle2
                 )
             }
         }

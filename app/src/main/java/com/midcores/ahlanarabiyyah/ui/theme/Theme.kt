@@ -5,11 +5,14 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Black
 
 private val DarkColorPalette = darkColors(
     primary = SugarCrystal,
     primaryVariant = GentianBlue,
-    secondary = CreamyApricot
+    secondary = CreamyApricot,
+    background = Black
 )
 
 private val LightColorPalette = lightColors(
@@ -33,7 +36,8 @@ fun AhlanArabiyyahTheme(
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
-        DarkColorPalette
+        //DarkColorPalette
+        LightColorPalette
     } else {
         LightColorPalette
     }

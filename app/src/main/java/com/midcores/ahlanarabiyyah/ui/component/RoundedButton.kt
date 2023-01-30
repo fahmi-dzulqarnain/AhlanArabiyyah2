@@ -1,0 +1,38 @@
+package com.midcores.ahlanarabiyyah.ui.component
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme.typography
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.Dp
+import com.midcores.ahlanarabiyyah.ui.theme.spacing
+
+@Composable
+fun RoundedButton(
+    label: String,
+    modifier: Modifier = Modifier,
+    cornerRadius: Dp = spacing.medium,
+    height: Dp = spacing.extraLarge,
+    onClick: () -> Unit
+) {
+    Button(
+        onClick = onClick,
+        shape = RoundedCornerShape(cornerRadius),
+        modifier = modifier.height(height)
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    text = label,
+                    style = typography.button
+                )
+            }
+        }
+    }
+}

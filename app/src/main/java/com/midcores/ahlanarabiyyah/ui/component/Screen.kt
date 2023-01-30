@@ -8,8 +8,8 @@ sealed class Screen(
     val route: String,
     @DrawableRes val iconID: Int
 ) {
-    object Beranda: Screen("Beranda", "beranda", R.drawable.ic_beranda)
-    object Kamus: Screen("Kamus", "kamus", R.drawable.ic_kamus)
+    object Beranda: Screen("Belajar", "beranda", R.drawable.ic_belajar)
+    object Kamus: Screen("Kamus Saya", "kamus", R.drawable.ic_kamus)
 
     object Items {
         val list = listOf(
